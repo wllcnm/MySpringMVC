@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>index.html</h1>
+<a th:href="@{/test/hello}">测试SpringMVC:路径hello</a><br>
+<a th:href="@{/test/abc}">测试SpringMVC:路径abc</a>
+<form th:action="@{/test/hello}" th:method="post">
+    <input type="submit" value="测试POST提交">
+</form>
+<br>
+
+<form th:action="@{/param/servletApi}" method="post">
+    账号:<input type="text" value="请输入账号" name="username"><br>
+    账号:<input type="text" value="请输入密码" name="password">
+    提交:<input type="submit" value="通过servlet获取参数">
+</form>
+<br>
+<form th:action="@{/param}" method="post">
+    账号:<input type="text" value="请输入账号" name="username"><br>
+    账号:<input type="text" value="请输入密码" name="password">
+    提交:<input type="submit" value="通过在controller方法设置参数获取">
+</form>
+<br>
+<form th:action="@{/param/pojo}" method="post">
+    账号:<input type="text" value="请输入账号" name="username"><br>
+    账号:<input type="text" value="请输入密码" name="password">
+    提交:<input type="submit" value="通过在controller方法设置参数获取,将参数封装在实体类中">
+</form>
+<br>
+<a th:href="@{/scope/modelAndView}">通过ModelAndView向域共享对象</a><br>
+<a th:href="@{/scope/model}">通过model向域共享对象</a><br>
+<a th:href="@{/scope/modelMap}">通过modelMap向域共享对象</a><br>
+<a th:href="@{/scope/Map}">通过map向域共享对象</a><br>
+<a th:href="@{/session}">通过向session域共享对象</a><br>
+<a th:href="@{/application}">通过向application域共享对象</a><br>
+<a th:href="@{/test/ajax}">向ajax发送请求</a>
+
+
+
+
+
+
+</body>
+</html>
